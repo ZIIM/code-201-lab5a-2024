@@ -100,11 +100,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  if (multArr.length === 0) {
+    return [0, 'The array is empty.'];
+  }
 
+  const product = multArr.reduce((acc, num) => acc * num, 1);
+  const resultString = `The numbers ${multArr.join(',')} have a product of ${product}.`;
+
+  return [product, resultString];
 }
 
+// Example usage:
+console.log(result);
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
